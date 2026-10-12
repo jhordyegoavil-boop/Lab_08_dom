@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarea - Lista de tareas</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 520px; margin: 30px auto; padding: 0 12px; }
+    form { display: flex; gap: 8px; }
+    #texto { flex: 1; padding: 8px; }
+    button { padding: 8px 12px; cursor: pointer; }
+    .ayuda { font-size: 13px; color: #666; margin: 4px 0; }
+    .error { color: #c0392b; }
+    .ok { color: #1e8449; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; justify-content: space-between; align-items: center;
+         border: 1px solid #ccc; padding: 8px; margin-bottom: 6px; }
+    li span { cursor: pointer; flex: 1; }
+    li.hecha span { text-decoration: line-through; color: #888; }
+    .borrar { background: #c0392b; color: #fff; border: 0; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Mi lista de tareas</h1>
+
+  <form id="formTarea">
+    <input id="texto" type="text" maxlength="60" placeholder="Escribe una tarea">
+    <button type="submit">Agregar</button>
+  </form>
+  <p class="ayuda"><span id="caracteres">0</span>/60 caracteres</p>
+  <p id="mensaje"></p>
+
+  <ul id="listaTareas"></ul>
+  <p>Pendientes: <strong id="pendientes">0</strong> de <strong id="totalTareas">0</strong></p>
+
+  <script src="app.js"></script>
+</body>
+</html>
